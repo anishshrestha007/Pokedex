@@ -164,6 +164,7 @@ class Pokedex extends React.Component {
             </Grid>
           </InfiniteScroll>
         )}
+        {pokeData && chunckedData.length === 0 && "No Data found!"}
       </React.Fragment>
     );
   }
