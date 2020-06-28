@@ -1,24 +1,20 @@
-.app{
-  overflow: auto;
-}
-.d-flex{
+.d-flex {
   display: flex;
 }
-.justify-content-center{
+.justify-content-center {
   justify-content: center;
 }
-.flex-column{
+.flex-column {
   flex-direction: column;
 }
-.pokedex-info-wrapper{
+.pokedex-info-wrapper {
   max-width: 800px;
   margin: 0 auto;
-  display: block;
-  /* height: calc(100vh - 200px);
+  /*   display: block;
+  height: calc(100vh - 200px);
   overflow: auto; */
 }
-.ui.grid>.row{
-
+.ui.grid > .row {
 }
 /*-----------------------------------------*/
 .selectedCell {

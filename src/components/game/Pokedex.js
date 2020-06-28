@@ -54,7 +54,7 @@ class Pokedex extends React.Component {
 
   fetchMoreData = () => {
     const { sliceSize, defaultSize, pokeData } = this.state;
-
+    debugger;
     this.setState({
       filteredData: pokeData.slice(0, defaultSize + sliceSize),
       defaultSize: defaultSize + sliceSize,
@@ -115,7 +115,7 @@ class Pokedex extends React.Component {
     const chunckedData = filteredData && _.chunk(filteredData, gameInfo.size);
 
     return (
-      <div className="pokedex-info-wrapper">
+      <React.Fragment>
         <div className="d-flex ">
           <Input
             icon="search"
@@ -164,7 +164,7 @@ class Pokedex extends React.Component {
             </Grid>
           </InfiniteScroll>
         )}
-      </div>
+      </React.Fragment>
     );
   }
 }
