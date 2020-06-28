@@ -1,0 +1,128 @@
+.selectedCell {
+  background-color: chocolate;
+}
+.row-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card-header-custom {
+  display: flex;
+}
+.row-center .ui.card {
+  margin: 0;
+}
+.ui.card .ui.celled.grid {
+  margin-bottom: 0;
+}
+.row-center .center-wrapper {
+  margin-top: 0;
+  display: flex;
+}
+.row-center .center-wrapper p {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  flex: 1;
+  border-radius: 4px;
+  line-height: 39px;
+  margin: 0 10px 0 0 !important;
+  padding: 0 10px;
+  background: #b3f1e7;
+  text-align: left;
+  font-size: 14px;
+  height: 39px;
+  color: #333;
+}
+.row-center .center-wrapper button {
+  margin-right: 0 !important;
+}
+.card-header-custom .ui.basic.button {
+  background: #ffad4b !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.ui.grid > .column:not(.row),
+.ui.grid > .row > .column {
+  font-size: 16px !important;
+  font: 600 !important;
+}
+.ui.celled.grid > .column:not(.row),
+.ui.celled.grid > .row > .column {
+  box-shadow: none !important;
+  border-radius: 5px;
+  border: 2px solid #fff;
+}
+.ui.celled.grid > .row {
+  box-shadow: none !important;
+}
+.ui.celled.grid > .column:not(.row),
+.ui.celled.grid > .row > .column {
+  padding: 0;
+  background: #00b5ad;
+}
+.ui.grid > .row > .teal.column,
+.ui.grid > .teal.column,
+.ui.grid > .teal.row,
+.ui.grid > .row > .teal.column,
+.ui.grid > .teal.column,
+.ui.grid > .teal.row {
+  background-color: transparent !important;
+}
+.ui.celled.grid {
+  box-shadow: none !important;
+}
+.ui[class*="six column"].grid > .column:not(.row),
+.ui[class*="six column"].grid > .row > .column {
+  width: 16.66666667%;
+  height: 40px;
+  line-height: 36px;
+  padding: 0;
+}
+.ui[class*="four column"].grid > .column:not(.row),
+.ui[class*="four column"].grid > .row > .column {
+  height: 60px;
+  line-height: 56px;
+}
+.ui[class*="five column"].grid > .column:not(.row),
+.ui[class*="five column"].grid > .row > .column {
+  height: 48px;
+  line-height: 44px;
+}
+
+/* .right.floated.column.selectedCell{
+  background: peru;
+} */
+.ui.celled.grid > .column:not(.row),
+.ui.celled.grid > .row > .column.selectedCell {
+  background: #83cc6f;
+}
+.review .table-div-wrapper tbody {
+  height: auto;
+  max-height: 125px;
+}
+.row-center.review .ui.card {
+  width: 350px;
+}
+.row-center.review {
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+.row-center.review .ui.green.button {
+  width: 150px;
+  margin-top: 15px;
+}
+.row-center.review .content {
+  position: relative;
+}
+.row-center.review .content:before {
+  position: absolute;
+  content: "";
+  display: block;
+  background: url(/packs/media/images/Balloons-d2fdbd06.gif) no-repeat;
+  top: -80px;
+  left: -320px;
+  width: 320px;
+  height: 320px;
+}
