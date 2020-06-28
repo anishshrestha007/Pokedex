@@ -13,6 +13,7 @@ import { Grid, Input, Button, Icon, Dropdown, Label } from "semantic-ui-react";
 
 import { showToast } from "../generics/Toast";
 import PokeCard from "../generics/PokeCard";
+import { NO_RESULT } from "../../constants/reviewMsgType";
 
 import InfiniteScroll from "react-infinite-scroll-component";
 class Pokedex extends React.Component {
@@ -137,7 +138,6 @@ class Pokedex extends React.Component {
                 options={gender}
                 onChange={this.handleDropDownChange}
               />
-              <Label>Gender</Label>
             </div>
           )}
         </div>
@@ -151,7 +151,12 @@ class Pokedex extends React.Component {
             }
             loader={<h4>Loading...</h4>}
           >
-            <Grid columns={gameInfo.size} celled={true} textAlign="center">
+            <Grid
+              columns={gameInfo.size}
+              celled={true}
+              textAlign="center"
+              centered={true}
+            >
               {chunckedData.map((pokemons, index) => (
                 <Grid.Row key={index}>
                   {pokemons.map((pokemon, i) => (
@@ -164,7 +169,12 @@ class Pokedex extends React.Component {
             </Grid>
           </InfiniteScroll>
         )}
-        {pokeData && chunckedData.length === 0 && "No Data found!"}
+        {pokeData && chunckedData.length === 0 && (
+          <React.Fragment>
+            {" "}
+            <Label color="blue"> {NO_RESULT} </Label>{" "}
+          </React.Fragment>
+        )}
       </React.Fragment>
     );
   }
