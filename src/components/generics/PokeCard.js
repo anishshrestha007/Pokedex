@@ -50,7 +50,6 @@ class PokeCard extends React.Component {
       <React.Fragment>
         <Grid.Column
           key={pokemon.name}
-          floated="right"
           onClick={() => this.handleCellClick(pokemon)}
         >
           <div onClick={this.changeModal}>{_.capitalize(pokemon.name)}</div>

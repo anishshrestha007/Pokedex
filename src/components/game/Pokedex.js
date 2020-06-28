@@ -76,14 +76,19 @@ class Pokedex extends React.Component {
   };
   handleDropDownChange = (e, data) => {
     debugger;
-    const { sliceSize, defaultSize } = this.state;
+    const { sliceSize, defaultSize, pokeName } = this.state;
     this.setState({ genderType: data.value });
+
     if (data.value === "") {
       this.props.getGameData &&
         this.props.getGameData(this.props.gameInfo, (resp) => {
+          let _filterData =
+            pokeName !== ""
+              ? resp.filter((pd) => pd.name.includes(pokeName))
+              : resp;
           this.setState({
             pokeData: resp,
-            filteredData: resp.slice(0, defaultSize),
+            filteredData: _filterData.slice(0, defaultSize),
           });
         });
     } else
@@ -93,9 +98,13 @@ class Pokedex extends React.Component {
           data.value,
           (resp) => {
             debugger;
+            let _filterData =
+              pokeName !== ""
+                ? resp.filter((pd) => pd.name.includes(pokeName))
+                : resp;
             this.setState({
               pokeData: resp,
-              filteredData: resp.slice(0, defaultSize),
+              filteredData: _filterData.slice(0, defaultSize),
             });
           }
         );
@@ -119,6 +128,7 @@ class Pokedex extends React.Component {
         />
         {gender && (
           <div className="rowC board-options">
+            <Label>Gender</Label>
             <Dropdown
               placeholder="Filter by Gender"
               fluid
@@ -127,7 +137,6 @@ class Pokedex extends React.Component {
               options={gender}
               onChange={this.handleDropDownChange}
             />
-            <Label>Gender</Label>
           </div>
         )}
 
@@ -136,8 +145,7 @@ class Pokedex extends React.Component {
             dataLength={filteredData.length}
             next={this.fetchMoreData}
             hasMore={
-              pokeData.length >= filteredData.length &&
-              filteredData.length >= 33
+              pokeData.length > filteredData.length && filteredData.length >= 33
             }
             loader={<h4>Loading...</h4>}
           >
