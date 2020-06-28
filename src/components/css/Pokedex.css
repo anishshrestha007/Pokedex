@@ -1,5 +1,5 @@
 .app{
-  overflow: hidden;
+  overflow: auto;
 }
 .d-flex{
   display: flex;
@@ -14,8 +14,8 @@
   max-width: 800px;
   margin: 0 auto;
   display: block;
-  height: calc(100vh - 200px);
-  overflow: auto;
+  /* height: calc(100vh - 200px);
+  overflow: auto; */
 }
 .ui.grid>.row{
 
