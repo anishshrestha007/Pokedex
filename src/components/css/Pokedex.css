@@ -1,6 +1,22 @@
+.d-flex{
+  display: flex;
+}
+.justify-content-center{
+  justify-content: center;
+}
+.flex-column{
+  flex-direction: column;
+}
+.pokedex-info-wrapper{
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+/*-----------------------------------------*/
 .selectedCell {
   background-color: chocolate;
 }
+
 .row-center {
   display: flex;
   flex-direction: row;

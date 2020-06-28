@@ -106,30 +106,32 @@ class Pokedex extends React.Component {
     const chunckedData = filteredData && _.chunk(filteredData, gameInfo.size);
 
     return (
-      <React.Fragment>
-        <Input
-          icon="search"
-          iconPosition="right"
-          error={error}
-          iconPosition="left"
-          placeholder="Search pokemon"
-          onChange={this.handleChange.bind(this)}
-          name="pokeName"
-          id="uinput"
-        />
-        {gender && (
-          <div className="rowC board-options">
-            <Dropdown
-              placeholder="Filter by Gender"
-              fluid
-              clearable
-              selection
-              options={gender}
-              onChange={this.handleDropDownChange}
-            />
-            <Label>Gender</Label>
-          </div>
-        )}
+      <div className="pokedex-info-wrapper">
+        <div className="d-flex ">
+          <Input
+            icon="search"
+            iconPosition="right"
+            error={error}
+            iconPosition="left"
+            placeholder="Search pokemon"
+            onChange={this.handleChange.bind(this)}
+            name="pokeName"
+            id="uinput"
+          />
+          {gender && (
+            <div className="rowC board-options">
+              <Dropdown
+                placeholder="Filter by Gender"
+                fluid
+                clearable
+                selection
+                options={gender}
+                onChange={this.handleDropDownChange}
+              />
+              <Label>Gender</Label>
+            </div>
+          )}
+        </div>
 
         {chunckedData && (
           <InfiniteScroll
@@ -154,7 +156,7 @@ class Pokedex extends React.Component {
             </Grid>
           </InfiniteScroll>
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }
