@@ -46,20 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "setupFiles": [
-      "./src/setupTests.js"
-    ],
-    "roots": [
-      "<rootDir>/src/components/__tests__"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/components/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/src/components/__mocks__/styleMock.js"
-    }
   }
 }
